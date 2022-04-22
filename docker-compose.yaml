@@ -1,0 +1,12 @@
+version: "3.3"
+services:  
+ myapp:
+    build: 
+      context: ./application
+      dockerfile: Dockerfile
+    image: rockmypost_python:latest
+    environment:
+      - PORT=8000
+    ports:
+      - "8000:8000"
+    command: sh -c "python3 test.py"
